@@ -1,0 +1,11 @@
+h1 {
+  text-align:left;
+    font-size: 2em;
+    font-style: italic;
+    color: grey;
+    text-shadow: 1px 1px red;
+    /*background-color: silver;*/
+}
+body {
+  /*background-color: #00FFFF;*/
+}
