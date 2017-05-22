@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style></style>
+    <link rel="stylesheet" href="my_screen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+
+    <script id="tableTemplate" type="text/x-handlebars-template">
+
+        <h2>Jobs Available...</h2>
+        <table id="tableID" border="1" style="cursor: pointer;">
+            <thead>
+                <tr>
+                    <th>job title</th>
+                    <th>Job Type</th>
+                    <th>job location</th>
+                    <th>Name of company</th>
+                    <th>Age</th>
+                    <th>click button to get a form</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each job}}
+                <tr>
+                    <td data-job-id="{{id}}">{{jobTitle}}</td>
+                    <td>{{JobType}}</td>
+                    <td>{{jobLocation}}</td>
+                    <td>{{NameOfCompany}}</td>
+                    <td>{{Age}}</td>
+                    <td><button data-jobs-id="{{id}}" onclick="formFunction('{{id}}');">{{Appy}}</button></td>
+                    {{/each}}
+                </tr>
+            </tbody>
+        </table>
+    </script>
+    <script id="candidateTemplate" type="text/x-handlebars-template">
+        {{#each title}}
+        <tr>
+            <p>LIST OF PEOPLE WHO ALREADY APPLIED</P>
+            <li>{{name}}</li>
+            <ul>{{surname}}</ul>
+            <ul>{{Age}}</ul>
+            <ul>{{email}}</ul>
+        </tr>
+        {{/each}}
+    </script>
+
+    <script id="applicationTemplate" type="text/x-handlebars-template">
+
+        <h1>Welcome to IT Company</h1>
+        <h2>Application Form</h2>
+        <div>
+            {{#each jobTitle}} {{jobTitle}} {{/each}}
+        </div>
+
+        {{#each title}}
+        <tr>
+            <li>{{name}}</li>
+            <li>{{surname}}</li>
+            <li>{{Age}}</li>
+            <li>{{email}}</li>
+        </tr>
+        {{/each}}
+
+        <div class="">
+            Name <br>
+            <input type="text" name="name" value="" id="input"> <br><br> Surname
+            <br>
+            <input type="text" name="surname" value="" id="input" c><br><br> Age
+            <br>
+            <input type="text" name="" value="" id="input"><br><br> email address <br> <input type="text" name="email" value=""> <br><br>
+        </div>
+        <button type="button" name="button" id="saveBtn">Save</button>
+        <button data-jobs-id="{{id}}" onclick="applicantFunction('{{id}}');">ViewApplicant</button>
+        <button data-jobs-jobTitle=" {{jobTitle}}" onclick="submitFunction('{{jobTitle}}');">{{submit}}view jobs details</button>
+
+    </script>
+</head>
+
+<body>
+    <!-- <button name="button" id="display">Display available jobs</button><br><br> -->
+    <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for it job you like.." title="Type in job tile"> -->
+    <br><br>
+    <div id="tableDisplay">
+    </div>
+    <div id="applicationForm">
+    </div>
+    <div id="applicant">
+
+    </div>
+    <button data-jobs-jobTitle=" {{jobTitle}}" onclick="backToAppFunction('{{jobTitle}}');">back to application Form</button>
+    <div id="backToApp">
+
+    </div>
+</body>
+<script type="text/javascript" src="my_screen.js"></script>
+
+</html>

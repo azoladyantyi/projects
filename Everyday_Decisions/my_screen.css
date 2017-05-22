@@ -1,0 +1,17 @@
+tr , td,{
+  border: 1px solid black;
+  background-color: white;
+  /*display: none;*/
+}
+table, tr:hover {
+          background-color: 	#00FFFF;
+        }
+body {
+  background-color: pink;
+}
+#jobInfo{
+  text-decoration: line-through;
+}
+li.menu-item {
+   margin:0 0 10px 0;
+}
