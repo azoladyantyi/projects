@@ -18,6 +18,7 @@
                     <th>Name of company</th>
                     <th>Age</th>
                     <th>click button to get a form</th>
+                    <th>click to view people who applied</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +30,7 @@
                     <td>{{NameOfCompany}}</td>
                     <td>{{Age}}</td>
                     <td><button data-jobs-id="{{id}}" onclick="formFunction('{{id}}');">{{Appy}}</button></td>
+                      <td><button data-jobs-id="{{jobTitle}}" onclick="applicantFunction('{{id}}');">{{ViewApplicant}}</button></td>
                     {{/each}}
                 </tr>
             </tbody>
@@ -51,7 +53,7 @@
         <h1>Welcome to IT Company</h1>
         <h2>Application Form</h2>
         <div>
-            {{#each jobTitle}} {{jobTitle}} {{/each}}
+            {{jobTitle}}
         </div>
 
         {{#each title}}
@@ -65,15 +67,15 @@
 
         <div class="">
             Name <br>
-            <input type="text" name="name" value="" id="input"> <br><br> Surname
+            <input type="text" name="name" value="" id="name"> <br><br> Surname
             <br>
-            <input type="text" name="surname" value="" id="input" c><br><br> Age
+            <input type="text" name="surname" value="" id="surname" c><br><br> Age
             <br>
-            <input type="text" name="" value="" id="input"><br><br> email address <br> <input type="text" name="email" value=""> <br><br>
+            <input type="text" name="" value="" id="age"><br><br> email address
+             <br> <input type="text" name="email" value="" id="email"> <br><br>
         </div>
-        <button type="button" name="button" id="saveBtn">Save</button>
-        <button data-jobs-id="{{id}}" onclick="applicantFunction('{{id}}');">ViewApplicant</button>
-        <button data-jobs-jobTitle=" {{jobTitle}}" onclick="submitFunction('{{jobTitle}}');">{{submit}}view jobs details</button>
+        <button type="button" name="button" onclick="canditateFunction('{{id}}')">Save</button>
+        <button id="viewApplicant" data-jobs-jobTitle="{{jobTitle}}" onclick="submitFunction('{{id}}');">{{submit}}view jobs details</button>
 
     </script>
 </head>
