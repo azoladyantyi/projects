@@ -5,6 +5,7 @@ tr , td,{
 }
 table, tr:hover {
           background-color: 	#00FFFF;
+          color: black;
         }
 body {
   background-color: pink;
@@ -14,4 +15,14 @@ body {
 }
 li.menu-item {
    margin:0 0 10px 0;
+}
+.jobTitle{
+  margin-bottom: 10px;
+color: blue;
+}
+h1{
+  color: red;
+}
+#tableDisplay{
+  color: green;
 }

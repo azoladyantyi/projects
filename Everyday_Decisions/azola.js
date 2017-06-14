@@ -6,7 +6,7 @@ var tableTemplateInst = Handlebars.compile(tableTemplate);
 
 var JobData = [{
         id: "1",
-        jobTitle: 'Back End Developer',
+        jobTitle: 'back end developer',
         JobType: 'Permanent',
         jobLocation: 'waterfront',
         NameOfCompany: 'Codex',
@@ -55,32 +55,35 @@ var JobData = [{
     },
 ];
 
-function showJobs() {
-    var displayTableResults = tableTemplateInst({
-        job: JobData
-    });
+function showJobs(){
+  var displayTableResults = tableTemplateInst({
+      job: JobData
+  });
 
-    var tableDisplay = document.querySelector('#tableDisplay');
-    tableDisplay.innerHTML = displayTableResults;
+  var tableDisplay = document.querySelector('#tableDisplay');
+  tableDisplay.innerHTML = displayTableResults;
+
+
+
+
 
 };
 
 showJobs();
 
 var viewApplicantBtn = document.querySelector("#viewApplicant");
-
 function submitFunction(jobTitle) {
-    var personalDetails = [];
-    for (var i = 0; i < JobData.length; i++) {
+  var personalDetails = [];
+  for (var i = 0; i < JobData.length; i++) {
 
-        if (viewApplicantBtn.dataset.jobsJobTitle === JobData[i].jobTitle) {
-            personalDetails.push({
-                name
-            })
+  if ( viewApplicantBtn.dataset.jobsJobTitle===JobData[i].jobTitle ) {
+      personalDetails.push({
+        name
+      })
 
 
-        }
-    }
+  }
+  }
 
     var tableTemplateInst = Handlebars.compile(tableTemplate);
 
@@ -89,22 +92,22 @@ function submitFunction(jobTitle) {
     });
 
     tableDisplay.innerHTML = displayTableResults;
-    applicationForm.innerHTML = ""
-    applicant.innerHTML = ""
-    backToApp.innerHTML = ""
+    // tableDisplay.innerHTML = ""
+    // applicant.innerHTML = ""
+    // backToApp.innerHTML = ""
 
 }
 
 //set up my empty div
-var applicationForm = document.querySelector('#applicationForm');
+var tableDisplay = document.querySelector('#tableDisplay');
 
 // //setup the application template
 var applicationTemplate = document.querySelector("#applicationTemplate").innerHTML;
 
-// //compile the applicationForm
+// //compile the tableDisplay
 const applicationInst = Handlebars.compile(applicationTemplate);
 //show results
-//applicationForm.innerHTML = ""
+//tableDisplay.innerHTML = ""
 
 function formFunction(jobId) {
     var itJob = JobData.find(function(f) {
@@ -124,18 +127,16 @@ function formFunction(jobId) {
 
     var displayForm = applicationInst(itJob)
 
-    applicationForm.innerHTML = displayForm
-
+    tableDisplay.innerHTML = displayForm
 }
 
 
 var applicant = document.querySelector("#applicant");
-// applicant.innerHTML = applicant
+
 var candidateTemplate = document.querySelector("#candidateTemplate").innerHTML;
 var candidateInst = Handlebars.compile(candidateTemplate);
 
 var FullDetail = [{
-    // jobTitle: 1
     name: "azola",
     surname: "Dyantyi",
     Age: 25,
@@ -147,14 +148,14 @@ var candiatateDetails = candidateInst({
 
 })
 
-  applicant.innerHTML = ""
+
 
 var candidateInst = Handlebars.compile(candidateTemplate);
 
 function canditateFunction(jobId) {
 
     var itJob = JobData.find(function(f) {
-        return f.id === jobId;
+      return f.id === jobId;
     });
 
     var candiatateDetails = candidateInst({
@@ -167,8 +168,8 @@ function canditateFunction(jobId) {
 
     if (name !== undefined && surname !== undefined && Age !== undefined && email !== undefined) {
 
-        if (!itJob.applications) {
-            itJob.applications = [];
+        if (!itJob.applications){
+          itJob.applications = [];
         }
 
         itJob.applications.push({
@@ -177,7 +178,7 @@ function canditateFunction(jobId) {
             Age: Number(Age.value),
             email: email.value
         });
-        applicationForm.innerHTML = ""
+
         showJobs();
 
 
@@ -190,7 +191,7 @@ var candidateInst = Handlebars.compile(candidateTemplate);
 function applicantFunction(jobId) {
 
     var itJob = JobData.find(function(f) {
-        return f.id === jobId;
+      return f.id === jobId;
     });
 
     var candiatateDetails = candidateInst({
@@ -198,13 +199,13 @@ function applicantFunction(jobId) {
     })
     applicant.innerHTML = candiatateDetails
     tableDisplay.innerHTML = ""
-    applicationForm.innerHTML = ""
+    tableDisplay.innerHTML = ""
 }
 
-var backToApp = document.querySelector("#backToApp");
+// var backToApp = document.querySelector("#backToApp");
 
 function backToAppFunction() {
+
     showJobs();
-    applicationForm.innerHTML = ""
-  applicant.innerHTML = ""
+
 }

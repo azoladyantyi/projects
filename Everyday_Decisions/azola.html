@@ -52,7 +52,7 @@
 
         <h1>Welcome to IT Company</h1>
         <h2>Application Form</h2>
-        <div class="jobTitle">
+        <div>
             {{jobTitle}}
         </div>
 
@@ -69,7 +69,7 @@
             Name <br>
             <input type="text" name="name" value="" id="name"> <br><br> Surname
             <br>
-            <input type="Number" name="surname" value="" id="surname" c><br><br> Age
+            <input type="text" name="surname" value="" id="surname" c><br><br> Age
             <br>
             <input type="text" name="" value="" id="age"><br><br> email address
              <br> <input type="text" name="email" value="" id="email"> <br><br>
@@ -81,16 +81,9 @@
 </head>
 
 <body>
-    <!-- <button name="button" id="display">Display available jobs</button><br><br> -->
-    <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for it job you like.." title="Type in job tile"> -->
-    <br><br>
     <div id="tableDisplay">
     </div>
-    <div id="applicationForm">
-    </div>
-    <div id="applicant">
-
-    </div>
+    
     <button data-jobs-jobTitle=" {{jobTitle}}" onclick="backToAppFunction('{{jobTitle}}');">back to application Form</button>
     <div id="backToApp">
 
