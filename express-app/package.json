@@ -1,0 +1,22 @@
+{
+  "name": "express-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "azola",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azoladyantyi/express-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azoladyantyi/express-app/issues"
+  },
+  "homepage": "https://github.com/azoladyantyi/express-app#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
